@@ -59,12 +59,50 @@ Or create a `.env` file and load it with a tool like [`dotenv`](https://www.npmj
 
 ### Option 1 – OpenAI (recommended for beginners)
 
-1. Go to [https://platform.openai.com/signup](https://platform.openai.com/signup) and create a free account.
-2. After signing in, open the **API keys** page: [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
-3. Click **Create new secret key**, give it a name, and copy the key shown — you won't be able to see it again.
-4. Set `AI_KEY` to that value, `AI_URL` to `https://api.openai.com/v1`, and `AI_MODEL` to a model you have access to (e.g. `gpt-4o-mini` for the free tier).
+> **What is OpenAI?** OpenAI is the company that created ChatGPT. The same AI that powers ChatGPT is available through their API (Application Programming Interface), which lets developers like you send messages to the AI from your own code and get responses back.
 
-> **Note:** Some models require a paid plan. `gpt-4o-mini` works on the free tier with usage limits.
+Follow these steps to create an account and generate your first API key:
+
+#### Step 1 – Create a free OpenAI account
+
+1. Open your browser and go to **[https://platform.openai.com/signup](https://platform.openai.com/signup)**.
+2. Click **Sign up**.
+3. Enter your **email address** and click **Continue**, or sign up instantly with your Google or Microsoft account.
+4. Create a **password** (if using email) and click **Continue**.
+5. Check your inbox for a **verification email** from OpenAI, open it, and click the confirmation link.
+6. Fill in your name and (optionally) your organization, then click **Continue**.
+
+You now have a free OpenAI account.
+
+#### Step 2 – Add a small credit balance (required to use the API)
+
+> The ChatGPT website is free to use, but API access is **pay-as-you-go**. For light experimentation, **$5 is enough to run thousands of requests**.
+
+1. In the left sidebar, click **Settings** (gear icon) → **Billing**.
+2. Click **Add payment method**, enter your card details, and confirm.
+3. Under **Add to credit balance**, enter `5` (USD) and click **Confirm**.
+
+#### Step 3 – Generate your API key
+
+1. In the top-left corner, click the OpenAI logo to return to the home dashboard, then go to **[https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)**  
+   *(or click **API keys** in the left sidebar)*.
+2. Click the **+ Create new secret key** button.
+3. Give your key a descriptive name (e.g. `my-first-ai-project`) and click **Create secret key**.
+4. A key starting with `sk-...` will appear. **Copy it immediately** — OpenAI will never show it to you again.  
+   Paste it somewhere safe (e.g. a notes app) for the next step.
+
+#### Step 4 – Set your environment variables
+
+Use the values below when following the [Setup](#setup) section:
+
+```bash
+export AI_KEY="sk-..."                        # the key you just copied
+export AI_URL="https://api.openai.com/v1"
+export AI_MODEL="gpt-4o-mini"                 # cheap model, great for beginners
+npm start
+```
+
+> **Tip:** `gpt-4o-mini` is OpenAI's most affordable model and works great for learning. Once you're comfortable, you can switch `AI_MODEL` to `gpt-4o` for more powerful responses.
 
 ### Option 2 – GitHub Models (free, no credit card)
 

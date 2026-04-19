@@ -124,9 +124,10 @@ Your-First-AI-Request/
 ├── index.js        # Main script – builds the prompt and calls the AI
 ├── utils.js        # Helper that validates required environment variables
 ├── package.json
+├── LICENSE
 └── README.md
 ```
 
 ## License
 
-This project is open source. Feel free to use and modify it.
+This project is licensed under the [MIT License](LICENSE). You are free to use, copy, modify, and distribute it.

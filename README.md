@@ -41,8 +41,10 @@ The following environment variables **must** be set before running the project:
 | Variable  | Description                                      | Example value                          |
 |-----------|--------------------------------------------------|----------------------------------------|
 | `AI_KEY`  | Your API key for the AI provider                 | `sk-...`                               |
-| `AI_URL`  | Base URL of the AI provider's API                | `https://api.openai.com/v1`            |
+| `AI_URL`  | Base URL of the AI provider's API (see note below) | `https://api.openai.com/v1`          |
 | `AI_MODEL`| The model name to use                            | `gpt-4o`                               |
+
+> **Note on `AI_URL`:** Some providers (like OpenAI) require a `/v1` suffix (e.g. `https://api.openai.com/v1`), while others (like GitHub Models) do not (e.g. `https://models.inference.ai.azure.com`). Check your provider's documentation.
 
 You can export them in your shell:
 
@@ -53,7 +55,13 @@ export AI_MODEL="gpt-4o"
 npm start
 ```
 
-Or create a `.env` file and load it with a tool like [`dotenv`](https://www.npmjs.com/package/dotenv).
+Or create a `.env` file in the project root (the project loads it automatically via [`dotenv`](https://www.npmjs.com/package/dotenv)):
+
+```env
+AI_KEY=your-api-key-here
+AI_URL=https://api.openai.com/v1
+AI_MODEL=gpt-4o
+```
 
 ## How to get an AI_KEY
 
@@ -110,7 +118,7 @@ npm start
 2. Pick a model (e.g. `gpt-4o`), click **Get API key**, and follow the prompts to generate a token.
 3. Set:
    - `AI_KEY` → your GitHub token
-   - `AI_URL` → `https://models.inference.ai.azure.com`
+   - `AI_URL` → `https://models.inference.ai.azure.com` *(no `/v1` — GitHub Models uses a different URL structure)*
    - `AI_MODEL` → `gpt-4o`
 
 ### Option 3 – Other OpenAI-compatible providers

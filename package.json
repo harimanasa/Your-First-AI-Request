@@ -1,0 +1,13 @@
+{
+  "name": "your-first-ai-request",
+  "version": "1.0.0",
+  "description": "First AI request using the OpenAI SDK",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "openai": "^6.34.0"
+  }
+}
